@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 8081, () => {
+app.listen(8081,'0.0.0.0', () => {
     console.log(`Server is running on port ${process.env.PORT}, handled by worker ${process.pid}`);
 });
