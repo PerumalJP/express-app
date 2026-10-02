@@ -1,6 +1,7 @@
 
 const express = require('express');
 const app = express();
+const packageJson = require('./package.json');
 
 
 app.get('/crash', (req, res) => {
@@ -12,6 +13,13 @@ app.get('/crash', (req, res) => {
 app.get('/', (req, res) => {
     
     res.send(`Hi i am from server running on port 8081, handled by worker ${process.env.PORT}`);
+});
+
+app.get('/version', (req, res) => {
+    res.json({
+        version: packageJson.version,
+        name: packageJson.name
+    });
 });
 
 
